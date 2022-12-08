@@ -189,11 +189,12 @@ main {
 
 .modal-title {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 .modal-text {
   font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .modal {
