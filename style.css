@@ -174,11 +174,12 @@ main {
 }
 
 /*-------------------------------------*/
+/* MODAL REGRAS */
 
 .close-modal {
   position: absolute;
-  top: 1.2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1.2rem;
   font-size: 5rem;
   color: #333;
   cursor: pointer;
@@ -186,17 +187,15 @@ main {
   background: none;
 }
 
-h1 {
+.modal-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
-p {
+.modal-text {
   font-size: 1.8rem;
 }
 
-/* -------------------------- */
-/* CLASSES TO MAKE MODAL WORK */
 .modal {
   position: absolute;
   top: 50%;
@@ -220,4 +219,232 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+}
+
+/* RESPONSIVO */
+/**************************/
+/* ABAIXO DE 1344px (Computadores Pequenos) */
+/**************************/
+@media (max-width: 84em) {
+  html {
+    /* 9px / 16px */
+    font-size: 56.25%;
+  }
+
+  main {
+    max-width: 100rem;
+    max-height: 56rem;
+    margin: 1rem 0;
+  }
+
+  .player {
+    flex: 45%;
+    padding: 8rem;
+  }
+
+  .name {
+    font-size: 3.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .score {
+    font-size: 7rem;
+  }
+
+  .current {
+    padding: 1.6rem;
+  }
+
+  .current-label {
+    font-size: 1.5rem;
+  }
+
+  .current-score {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 0.7rem 2.2rem;
+  }
+
+  .btn::first-letter {
+    font-size: 2rem;
+    margin-right: 0.7rem;
+  }
+
+  .btn--new {
+    top: 7rem;
+  }
+  .btn--roll {
+    top: 38rem;
+  }
+  .btn--hold {
+    top: 43rem;
+  }
+  .btn--modal {
+    top: 50rem;
+  }
+
+  .dice {
+    height: 10rem;
+  }
+}
+
+/**************************/
+/* ABAIXO DE 944px (Tablets Verticais) */
+/**************************/
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+
+  main {
+    max-width: 100rem;
+    max-height: 90rem;
+    margin: 0 1rem;
+  }
+}
+
+/**************************/
+/* ABAIXO DE 704px (Tablets Verticais Menores) */
+/**************************/
+@media (max-width: 44em) {
+  main {
+    max-width: 80rem;
+    max-height: 80rem;
+    margin: 0 1rem;
+  }
+
+  .player {
+    padding: 2rem;
+  }
+
+  .name {
+    font-size: 3rem;
+    margin: 5rem 1rem;
+  }
+
+  .score {
+    font-size: 7rem;
+  }
+
+  .current {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .btn--new {
+    top: 4rem;
+  }
+
+  .btn--roll {
+    top: 35rem;
+  }
+
+  .btn--hold {
+    top: 40rem;
+  }
+
+  .btn--modal {
+    top: 49rem;
+  }
+
+  .dice {
+    height: 8rem;
+  }
+}
+
+/**************************/
+/* ABAIXO DE 544px (Smartphones) */
+/**************************/
+@media (max-width: 34em) {
+  main {
+    max-width: 75rem;
+    max-height: 55rem;
+  }
+}
+
+/**************************/
+/* ABAIXO DE 360px (Smartphones Pequenos) */
+/**************************/
+@media (max-width: 22em) {
+  main {
+    max-width: 40rem;
+    max-height: 70rem;
+    margin: 0 1rem;
+  }
+
+  .player {
+    padding: 2rem;
+  }
+
+  .name {
+    font-size: 2.2rem;
+    margin: 5rem 1rem;
+  }
+
+  .score {
+    font-size: 7rem;
+  }
+
+  .current {
+    padding: 1.2rem 0;
+    margin-bottom: 5rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .btn--new {
+    top: 2rem;
+  }
+
+  .btn--roll {
+    top: 32rem;
+  }
+
+  .btn--hold {
+    top: 37rem;
+  }
+
+  .btn--modal {
+    top: 55rem;
+  }
+
+  .dice {
+    height: 8rem;
+  }
+
+  .close-modal {
+    top: 0.8rem;
+    right: 1.2rem;
+    font-size: 3rem;
+  }
+
+  .modal {
+    width: 70%;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .modal-text {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
 }

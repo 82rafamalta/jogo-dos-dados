@@ -1,6 +1,6 @@
 'use strict';
 
-// Selecting elements
+// Seleção de elementos
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
@@ -8,6 +8,8 @@ const btnsOpenModal = document.querySelectorAll('.btn--modal');
 
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
+
+// Seleção de elementos por ID
 const score0El = document.querySelector('#score--0');
 const score1El = document.querySelector('#score--1');
 const current0El = document.querySelector('#current--0');
@@ -18,10 +20,9 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+// Condições iniciais
 let scores, currentScore, activePlayer, playing;
 
-// The Pig Game //
-// Starting Conditions
 const init = function () {
   scores = [0, 0];
   currentScore = 0;
@@ -49,24 +50,24 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
-// Rolling dice funcionality
+// Funcionalidade Rolar Dados
 btnRoll.addEventListener('click', function () {
   if (playing) {
-    // 1. Generating a ranbom dice roll
+    // 1. Gerando um número aleatório para o dado (1~6)
     const dice = Math.trunc(Math.random() * 6) + 1;
 
-    // 2. Display dice
+    // 2. Mostrando os dados com o valor correspondente
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
 
-    // 3. Check for rolled 1: if true, switch to nexto player
+    // 3. Verificar se o dado deu 1: se sim, trocar de jogador
     if (dice !== 1) {
-      // Add dice to current score
+      // Adicionar valor na Pontuação Inicial
       currentScore += dice;
       document.querySelector(`#current--${activePlayer}`).textContent =
         currentScore;
     } else {
-      // Wshith to next player
+      // trocar para o próximo jogador
       switchPlayer();
     }
   }
@@ -74,14 +75,14 @@ btnRoll.addEventListener('click', function () {
 
 btnHold.addEventListener('click', function () {
   if (playing) {
-    // 1. Add current scote to active player
+    // 1. Adicionar a Pontuação Atual ao Jogador ativo
     scores[activePlayer] += currentScore;
     document.querySelector(`#score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    // 2. Check if player's score is >= 100
+    // 2. Verificar se a pontuação do jogador é >= 100
     if (scores[activePlayer] >= 100) {
-      // Finish the game
+      // Finalizar o jogo
       playing = false;
       diceEl.classList.add('hidden');
       document
@@ -91,7 +92,7 @@ btnHold.addEventListener('click', function () {
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
     } else {
-      // Switch to the next player
+      // trocar para o próximo jogador
       switchPlayer();
     }
   }
